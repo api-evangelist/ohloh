@@ -1,0 +1,31 @@
+generated: '2026-07-20'
+method: probed
+source: https://www.openhub.net/.well-known/
+description: >-
+  Probe of standard /.well-known/ paths on the Open Hub (Ohloh) host. The host
+  fronts all automated requests with a WAF that returns HTTP 403 to non-browser
+  clients (the site root also returns 403 to curl), so these results are
+  inconclusive rather than confirmed absent. No well-known document could be
+  retrieved.
+host: https://www.openhub.net
+probed:
+- path: /.well-known/security.txt
+  status: 403
+  file: null
+  note: WAF-blocked (inconclusive)
+- path: /.well-known/openid-configuration
+  status: 403
+  file: null
+  note: WAF-blocked (inconclusive)
+- path: /.well-known/oauth-authorization-server
+  status: 403
+  file: null
+  note: WAF-blocked (inconclusive)
+- path: /.well-known/api-catalog
+  status: 403
+  file: null
+  note: WAF-blocked (inconclusive)
+- path: /.well-known/ai-plugin.json
+  status: 403
+  file: null
+  note: WAF-blocked (inconclusive)

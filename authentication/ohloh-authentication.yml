@@ -1,0 +1,35 @@
+generated: '2026-07-20'
+method: searched
+source: https://github.com/blackducksoftware/ohloh_api/blob/master/README.md
+description: >-
+  Authentication profile for the Black Duck Open Hub (Ohloh) API, captured from
+  the provider's public API documentation. Read access uses an api_key HTTP
+  parameter; write access and private account data use OAuth 2.0.
+api: Open Hub API (Ohloh)
+base_url: https://www.openhub.net
+docs: https://github.com/blackducksoftware/ohloh_api/blob/master/README.md
+
+schemes:
+- id: api_key
+  type: apiKey
+  in: query
+  name: api_key
+  required: true
+  description: >-
+    Provide your API key as the api_key HTTP query parameter on every request.
+    Requests without a valid api_key are forbidden. Register for a key at
+    https://www.openhub.net/accounts/me/api_keys/new (up to five applications
+    per account).
+  example: https://www.openhub.net/p/1.xml?api_key=YOUR_API_KEY
+
+- id: oauth2
+  type: oauth2
+  description: >-
+    OAuth 2.0 is used for write operations and to read private account data,
+    allowing an application to act on behalf of an Open Hub user. Standard
+    api_key access is read-only against public data.
+  scopes: {}
+
+registration: https://www.openhub.net/accounts/me/api_keys/new
+key_limit_per_account: 5
+terms_of_use: https://community.blackduck.com/s/article/Black-Duck-Open-Hub-API-Use-Agreement

@@ -1,0 +1,48 @@
+generated: '2026-07-20'
+method: derived
+source: >-
+  Derived from the Open Hub (Ohloh) API documentation
+  (https://github.com/blackducksoftware/ohloh_api). Assessing which cross-cutting
+  industry standards the API conforms to.
+api: Open Hub API (Ohloh)
+description: >-
+  Conformance assessment of the Open Hub / Ohloh API against common cross-cutting
+  API standards. Each entry records whether the API conforms and the evidence.
+
+standards:
+- id: oauth2
+  conforms: true
+  evidence: >-
+    Documentation states OAuth 2.0 is used for write access and to read private
+    account data on behalf of a user.
+- id: rest
+  conforms: true
+  evidence: Resource-oriented REST over HTTPS with .xml resource representations.
+- id: pagination
+  conforms: true
+  evidence: >-
+    Page-number pagination (page parameter, one-based) with items_returned,
+    items_available and first_item_position response fields; 25 items per page.
+- id: oidc
+  conforms: false
+  evidence: No OpenID Connect discovery or id_token support documented.
+- id: rfc9457
+  conforms: false
+  evidence: >-
+    Errors use a custom XML <response><status>failed</status><error> envelope,
+    not application/problem+json.
+- id: json_api
+  conforms: false
+  evidence: Responses are XML only; no JSON:API media type.
+- id: idempotency
+  conforms: false
+  evidence: No idempotency-key mechanism documented.
+- id: scim
+  conforms: false
+  evidence: No SCIM user provisioning surface.
+- id: fhir
+  conforms: false
+  evidence: Not a healthcare API.
+- id: odata
+  conforms: false
+  evidence: No OData query surface.

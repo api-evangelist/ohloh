@@ -1,0 +1,57 @@
+generated: '2026-07-20'
+method: searched
+source: https://github.com/blackducksoftware/ohloh_api/blob/master/README.md
+description: >-
+  Cross-cutting request/response conventions for the Black Duck Open Hub (Ohloh)
+  API, captured from the provider's public documentation. These are the
+  runtime-semantics that apply to every resource: authentication, response
+  envelope, pagination, error signaling and rate limiting.
+api: Open Hub API (Ohloh)
+base_url: https://www.openhub.net
+api_style: >-
+  REST over HTTPS. Resource URLs take a .xml suffix (e.g. /p/1.xml). Responses
+  are XML only (no JSON).
+
+authentication:
+  scheme: api_key HTTP query parameter (read); OAuth 2.0 (write / private data)
+  param: api_key
+  detail: authentication/ohloh-authentication.yml
+  docs: https://github.com/blackducksoftware/ohloh_api/blob/master/README.md
+
+response_envelope:
+  format: xml
+  root_element: response
+  always_contains: status
+  status_values: [success, failed]
+  error:
+    element: error
+    present_when: status is failed
+    content: human-readable help text
+  docs: https://github.com/blackducksoftware/ohloh_api/blob/master/README.md#the-response-element
+
+pagination:
+  style: page-number
+  request_params:
+    page: One-based page index (default 1). Request subsequent pages beyond the first.
+    query: Optional filter string (server decides which field is searched per resource).
+    sort: Controls sort order (per-resource allowed values, e.g. created_at, name, updated_at).
+  page_size: At most 25 items per request (fixed; no per_page parameter).
+  response_fields:
+    items_returned: Number of items returned in this response.
+    items_available: Total number of matching items in the database, including those already returned.
+    first_item_position: Zero-based index of the first item returned.
+  docs: https://github.com/blackducksoftware/ohloh_api/blob/master/README.md#collection-requests
+
+idempotency:
+  supported: false
+  note: The API documents no idempotency-key mechanism.
+
+versioning:
+  scheme: unversioned path (no version segment in the base URL)
+
+rate_limiting:
+  documented: true
+  default_limit: 1000 requests per api_key per day
+  higher_limits: Contact info@openhub.net to request a higher limit.
+  detail: rate-limits/ohloh-rate-limits.yml
+  docs: https://github.com/blackducksoftware/ohloh_api/blob/master/README.md

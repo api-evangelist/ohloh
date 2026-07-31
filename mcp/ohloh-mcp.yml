@@ -1,0 +1,61 @@
+generated: '2026-07-20'
+method: derived
+status: candidate
+source: >-
+  Derived from the Open Hub (Ohloh) API resource reference
+  (https://github.com/blackducksoftware/ohloh_api/tree/master/reference). No
+  official hosted or remote MCP server was found for Open Hub / Ohloh; this is a
+  candidate tool list mapped from the documented read resources.
+api: Open Hub API (Ohloh)
+name: ohloh-open-hub
+description: >-
+  Candidate Model Context Protocol tool surface for the Black Duck Open Hub
+  (Ohloh) REST API. Tools map to documented read resources; all requests carry
+  the api_key parameter and return XML.
+transport: none-published
+base_url: https://www.openhub.net
+auth: api_key query parameter (OAuth 2.0 for write / private data)
+
+tools:
+- name: get_project
+  description: Retrieve a single open source project by id or url_name.
+  resource: /p/{id}.xml
+- name: search_projects
+  description: Search the project directory by query string, sorted and paged.
+  resource: /projects.xml
+- name: get_account
+  description: Retrieve a single Open Hub account (contributor) by id or login.
+  resource: /accounts/{id}.xml
+- name: search_accounts
+  description: Search accounts by name.
+  resource: /accounts.xml
+- name: get_organization
+  description: Retrieve a single organization by id or name.
+  resource: /orgs/{id}.xml
+- name: list_organizations
+  description: List organizations tracked by Open Hub.
+  resource: /organizations.xml
+- name: get_analysis
+  description: Retrieve the current best analysis for a project.
+  resource: /p/{project}/analyses/latest.xml
+- name: list_languages
+  description: List programming languages known to Open Hub with usage stats.
+  resource: /languages.xml
+- name: get_language
+  description: Retrieve a single programming language profile.
+  resource: /languages/{id}.xml
+- name: list_project_factoids
+  description: Retrieve factoids (codebase and team insights) for a project.
+  resource: /p/{project}/factoids.xml
+- name: get_stack
+  description: Retrieve a software stack for an account or project.
+  resource: /accounts/{account}/stacks/default.xml
+- name: get_size_facts
+  description: Retrieve historical size facts (lines of code, commits) for a project analysis.
+  resource: /p/{project}/analyses/{analysis}/size_facts.xml
+- name: get_activity_facts
+  description: Retrieve monthly activity facts (commits, contributors) for a project analysis.
+  resource: /p/{project}/analyses/{analysis}/activity_facts.xml
+- name: get_contributor_facts
+  description: Retrieve contributor facts for a project analysis.
+  resource: /p/{project}/analyses/{analysis}/contributors.xml

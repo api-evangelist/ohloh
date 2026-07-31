@@ -1,0 +1,17 @@
+generated: '2026-07-20'
+method: searched
+source: https://github.com/blackducksoftware/ohloh_api/blob/master/README.md
+description: >-
+  Published rate limits for the Black Duck Open Hub (Ohloh) API.
+api: Open Hub API (Ohloh)
+docs: https://github.com/blackducksoftware/ohloh_api/blob/master/README.md
+
+limits:
+- name: Default per-key daily quota
+  limit_count: 1000
+  interval: day
+  scope: api_key
+  description: >-
+    Bandwidth is limited to 1,000 requests per API key per day. Higher limits
+    are available by contacting Open Hub support at info@openhub.net.
+  higher_limit_contact: info@openhub.net

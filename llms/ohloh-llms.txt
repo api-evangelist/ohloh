@@ -1,0 +1,49 @@
+# Ohloh / Black Duck Open Hub
+
+> Ohloh is the open source directory and analytics service now known as Black Duck
+> Open Hub (openhub.net). It tracks hundreds of thousands of open source projects,
+> their code, contributors, languages, licenses and activity, and exposes the data
+> through a public REST API that returns XML.
+
+Generated: 2026-07-20
+Method: generated (from the API Evangelist catalog + provider documentation)
+Source: https://github.com/blackducksoftware/ohloh_api
+
+## API
+
+- Base URL: https://www.openhub.net
+- Style: REST over HTTPS; resource URLs take a `.xml` suffix (e.g. `/p/1.xml`). XML only, no JSON.
+- Response envelope: XML wrapped in `<response>`, which always contains `<status>` (success|failed); an `<error>` element with help text is present on failure.
+- Authentication: `api_key` HTTP query parameter for read access; OAuth 2.0 for write access and private account data. Register a key at https://www.openhub.net/accounts/me/api_keys/new (up to 5 apps per account).
+- Rate limit: 1,000 requests per API key per day (contact info@openhub.net for more).
+- Pagination: `page` (one-based), `query`, `sort` parameters; at most 25 items per page; responses report `items_returned`, `items_available`, `first_item_position`.
+
+## Resources
+
+- Project — /p/{id}.xml (name, description, homepage_url, analysis, languages, licenses, tags, factoids)
+- Account — contributor accounts
+- Organization — organizations and their affiliated/portfolio projects
+- Analysis — the current best analysis of a project
+- Activity Fact / Size Fact — monthly activity and codebase size history
+- Contributor Fact / Contributor Language Fact — who contributed and in which languages
+- Language — programming language directory and stats
+- Stack / Stack Entry — software stacks for accounts and projects
+- Factoid — codebase and team insights
+- Kudo / Kudo Score — peer recognition
+- Position — contributor positions on projects
+- Enlistment / Code Location — repositories analyzed for a project
+- Email Lookup — resolve an account by email hash
+
+## Documentation
+
+- API docs and reference: https://github.com/blackducksoftware/ohloh_api
+- Resource reference: https://github.com/blackducksoftware/ohloh_api/tree/master/reference
+- Getting started (README): https://github.com/blackducksoftware/ohloh_api/blob/master/README.md
+- API Use Agreement (terms): https://community.blackduck.com/s/article/Black-Duck-Open-Hub-API-Use-Agreement
+- Website: https://www.openhub.net
+- GitHub organization: https://github.com/blackducksoftware
+
+## Notes
+
+- Ohloh was rebranded Black Duck Open Hub; the API repository is still named `ohloh_api`.
+- Attribution linking back to openhub.net is required by the API Use Agreement.

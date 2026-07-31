@@ -1,22 +1,126 @@
 aid: ohloh
 name: Ohloh
-description: Ohloh is a company surfaced as a portfolio company of uncork-capital and added to the API
-  Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Ohloh is the open source directory and analytics service that was rebranded as
+  Black Duck Open Hub (openhub.net) after Black Duck Software acquired it. It
+  tracks hundreds of thousands of open source projects, their code, contributors,
+  languages, licenses and activity, and exposes this data through a public REST
+  API. The Open Hub / Ohloh API returns XML, authenticates with an api_key HTTP
+  parameter (plus OAuth 2.0 for write access and private account data), is rate
+  limited to 1,000 requests per key per day, and covers resources such as
+  projects, accounts, organizations, analyses, languages, stacks, factoids and
+  contributor facts. This profile was added to the API Evangelist network as a
+  stub and enriched from the provider's public documentation.
 url: https://raw.githubusercontent.com/api-evangelist/ohloh/refs/heads/main/apis.yml
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://avatars.githubusercontent.com/blackducksoftware
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - uncork-capital
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier: profile
+x-tier-reason: enriched-from-docs
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
 tags:
 - Company
-apis: []
+- Open Source
+- Open Source Directory
+- Code Analytics
+- Software Composition
+- Developer Data
+- Projects
+- Contributors
+- Black Duck
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+apis:
+- aid: ohloh:open-hub-api
+  name: Open Hub API (Ohloh)
+  humanURL: https://github.com/blackducksoftware/ohloh_api
+  baseURL: https://www.openhub.net
+  description: >-
+    The REST API for Black Duck Open Hub (formerly Ohloh). Returns XML wrapped in
+    a <response> root element that always carries a <status> (success/failed) and
+    an <error> on failure. Requests append .xml to a resource URL and pass the
+    api_key HTTP parameter; write operations and private account data use OAuth
+    2.0. Collections return at most 25 items per page (page parameter, one-based;
+    query and sort parameters) and report items_returned, items_available and
+    first_item_position. Resources include projects, accounts, organizations,
+    analyses, languages, stacks, factoids, kudos, positions and contributor
+    facts.
+  tags:
+  - Open Source
+  - Projects
+  - Contributors
+  - Code Analytics
+  properties:
+  - type: Documentation
+    url: https://github.com/blackducksoftware/ohloh_api
+  - type: APIReference
+    url: https://github.com/blackducksoftware/ohloh_api/tree/master/reference
+  - type: Authentication
+    url: authentication/ohloh-authentication.yml
+  - type: Conventions
+    url: conventions/ohloh-conventions.yml
+  - type: RateLimits
+    url: rate-limits/ohloh-rate-limits.yml
+common:
+- type: DomainSecurity
+  url: security/ohloh-domain-security.yml
+- type: Website
+  url: https://www.openhub.net
+- type: DeveloperPortal
+  url: https://github.com/blackducksoftware/ohloh_api
+- type: Documentation
+  url: https://github.com/blackducksoftware/ohloh_api
+- type: APIReference
+  url: https://github.com/blackducksoftware/ohloh_api/tree/master/reference
+- type: GettingStarted
+  url: https://github.com/blackducksoftware/ohloh_api/blob/master/README.md
+- type: GitHubOrganization
+  url: https://github.com/blackducksoftware
+- type: SignUp
+  url: https://www.openhub.net/accounts/me/api_keys/new
+- type: TermsOfService
+  url: https://community.blackduck.com/s/article/Black-Duck-Open-Hub-API-Use-Agreement
+- type: Authentication
+  url: authentication/ohloh-authentication.yml
+- type: Conventions
+  url: conventions/ohloh-conventions.yml
+- type: RateLimits
+  url: rate-limits/ohloh-rate-limits.yml
+- type: Conformance
+  url: conformance/ohloh-conformance.yml
+- type: MCPServer
+  url: mcp/ohloh-mcp.yml
+- type: WellKnown
+  url: well-known/ohloh-well-known.yml
+- type: LLMsTxt
+  url: llms/ohloh-llms.txt
+x-enrichment:
+  date: '2026-07-20'
+  status: enriched
+  artifacts_added: 8
+  pass: local-v1
+rate_limits:
+- name: Open Hub API default
+  limit_count: 1000
+  interval: day
+  scope: api_key
+  source: https://github.com/blackducksoftware/ohloh_api/blob/master/README.md
