@@ -1,21 +1,16 @@
 generated: '2026-07-20'
 method: derived
 status: candidate
-source: >-
-  Derived from the Open Hub (Ohloh) API resource reference
-  (https://github.com/blackducksoftware/ohloh_api/tree/master/reference). No
-  official hosted or remote MCP server was found for Open Hub / Ohloh; this is a
-  candidate tool list mapped from the documented read resources.
+source: Derived from the Open Hub (Ohloh) API resource reference (https://github.com/blackducksoftware/ohloh_api/tree/master/reference).
+  No official hosted or remote MCP server was found for Open Hub / Ohloh; this is a candidate tool list
+  mapped from the documented read resources.
 api: Open Hub API (Ohloh)
 name: ohloh-open-hub
-description: >-
-  Candidate Model Context Protocol tool surface for the Black Duck Open Hub
-  (Ohloh) REST API. Tools map to documented read resources; all requests carry
-  the api_key parameter and return XML.
+description: Candidate Model Context Protocol tool surface for the Black Duck Open Hub (Ohloh) REST API.
+  Tools map to documented read resources; all requests carry the api_key parameter and return XML.
 transport: none-published
 base_url: https://www.openhub.net
 auth: api_key query parameter (OAuth 2.0 for write / private data)
-
 tools:
 - name: get_project
   description: Retrieve a single open source project by id or url_name.
@@ -59,3 +54,9 @@ tools:
 - name: get_contributor_facts
   description: Retrieve contributor facts for a project analysis.
   resource: /p/{project}/analyses/{analysis}/contributors.xml
+deployment:
+  mode: none
+  verified: derived
+  tools: 14
+  checked: '2026-08-12'
+  source: catalog MCP census
