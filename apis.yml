@@ -36,6 +36,16 @@ created: '2026-07-17'
 modified: '2026-07-20'
 tags:
 - Company
+- Open-Source
+- Open Source Directory
+- Code Analytics
+- Software Composition
+- Developer Data
+- Project
+- Contributors
+- Black Duck
+tags_raw:
+- Company
 - Open Source
 - Open Source Directory
 - Code Analytics
@@ -65,6 +75,11 @@ apis:
     analyses, languages, stacks, factoids, kudos, positions and contributor
     facts.
   tags:
+  - Open-Source
+  - Project
+  - Contributors
+  - Code Analytics
+  tags_raw:
   - Open Source
   - Projects
   - Contributors
