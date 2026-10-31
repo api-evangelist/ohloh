@@ -64,6 +64,102 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Ohloh is a company surfaced as a portfolio company of uncork-capital and added to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+Ohloh is the open source directory and analytics service that was rebranded as Black Duck Open Hub (openhub.net) after Black Duck Software acquired it. It tracks hundreds of thousands of open source projects, their code, contributors, languages, licenses and activity, and exposes this data through a public REST API. The Open Hub / Ohloh API returns XML, authenticates with an api_key HTTP parameter (plus OAuth 2.0 for write access and private account data), is rate limited to 1,000 requests per key per day, and covers resources such as projects, accounts, organizations, analyses, languages, stacks, factoids and contributor facts. This profile was added to the API Evangelist network as a stub and enriched from the provider's public documentation.
 
-Backed by: uncork-capital
+**Areas:** Company · Open Source · Open Source Directory · Code Analytics · Software Composition · DEVELOPER DATA · Project · Contributors · Black Duck
+
+## Ohloh on APIs.io
+
+Everything profiled for Ohloh is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/ohloh/](https://apis.io/providers/ohloh/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [Open Hub API (Ohloh)](https://apis.io/apis/ohloh/open-hub-api/) — The REST API for Black Duck Open Hub (formerly Ohloh). Returns XML wrapped in a <response> root element that always carries a <status> (success/failed) and…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [ohloh-open-hub](https://apis.io/servers/ohloh/ohloh-open-hub/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Ohloh Authentication](https://apis.io/security/ohloh/ohloh-authentication/)
+- [Ohloh Domain Security](https://apis.io/security/ohloh/ohloh-domain-security/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Ohloh Rate Limits](https://apis.io/rate-limits/ohloh/ohloh-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.openhub.net)
+- [Documentation](https://github.com/blackducksoftware/ohloh_api)
+- [Getting started](https://github.com/blackducksoftware/ohloh_api/blob/master/README.md)
+- [API reference](https://github.com/blackducksoftware/ohloh_api/tree/master/reference)
+- [Sign up](https://www.openhub.net/accounts/me/api_keys/new)
+- [Terms of service](https://community.blackduck.com/s/article/Black-Duck-Open-Hub-API-Use-Agreement)
+- [GitHub](https://github.com/blackducksoftware)
+
+## API Evangelist rating
+
+**Kin Score 25.6** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 64.3 |
+| Contract quality | 0.0 |
+| Contract governance | 4.5 |
+| Operational transparency | 23.7 |
+| Developer ergonomics | 50.0 |
+| Access clarity | 23.7 |
+
+**Agent readiness 5.0** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 20.6** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/ohloh/](https://apis.io/providers/ohloh/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Ohloh: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/ohloh/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
